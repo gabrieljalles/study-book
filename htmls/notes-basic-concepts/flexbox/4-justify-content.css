@@ -1,0 +1,14 @@
+.container{
+    max-width: 400px;
+    border: 1px solid black;
+    margin: 0;
+    display:flex;
+    justify-content:space-around;
+}
+
+.item{
+    background: blueviolet;
+    margin:5px;
+    text-align:center;
+    color: white;
+}

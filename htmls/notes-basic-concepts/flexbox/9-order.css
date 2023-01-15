@@ -1,0 +1,15 @@
+.flex-container{
+    display:flex;
+    max-width: 300px;
+    border: 1px solid black;
+    margin-bottom:20px;
+}
+
+.item{
+    flex:1;
+    background: red;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+}

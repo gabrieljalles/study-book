@@ -1,0 +1,162 @@
+Funcôes de primeira vez:
+
+    1 criando um ambiente virtual em venv:
+        python -m venv venv
+    
+    Verifique se o venv está ativo:
+        venv/script/activate
+
+        2 instalando django...
+            pip install django
+        
+        3 iniciando o projeto com o django
+            django-admin startproject nome do projeto .
+        
+    
+
+funcoes para começar a trabalhar:
+
+    1 vrificando se o interpretador é o python , o pyton da venv da pasta atual
+        caso não, F1...
+
+    2 iniciando o venv:
+        .\venv\Scripts\activate
+
+funcoes uteis:
+    
+    1 ligando o servidor: 
+        python manage.py runserver
+    
+    2 Criando um app para o site:
+
+        "   
+            A sessão do site é um caminho dele,  vamos dizer que o site chama projeto.com
+            O app nada mais é que o  projeto.com/app
+        "
+        
+        python manage.py startapp nomeapp
+
+        Sempre que você criar um app, você precisa registar ele no url.py e no projeto/setings.py:
+
+            Para referenciar no setings você precisa referenciar a classe criada em apps para o setings colocando o caminho completo:
+                INSTALED APPS:
+                    'nomeapp.apps.nomeappConfig'
+            
+            Para referenciar no urls:
+
+            "
+              O motivo de criar o url, é o meso que o mostrado anteriormente, vamos dizer que dentro de projeto.com/app você quer por um novo caminho:
+              ai ficará : projeto.com/app/subapp
+
+            "
+
+                1 Você precisa criar uma urls.py dentro da pasta nomeapp.
+
+                2 dentro da projeto/urls.py criar:
+                    path('nomeapp/', include('')) #não esqueça de importar o include
+                        Dentro do include coloque o caminho da url criada ('nomeapp.urls')
+                
+                3 dentro da pasta urls criada dentro do app, import :
+                    from django.urls import path
+
+                    from . import views # o ponto é usado para referenciar a própria pasta, evita de procurar em outro lugar.
+                
+                4 precisa criar o url pattenrs dentro de url criada no app:
+                    #exe: /blog/post
+
+                    urlpattenrs = [
+                        path('',views.index) # significa que quando chamar o primeiro parametro, ele referencia algo em views, se o  priemiro parametro é vazio, ele permanece em projeto.com/blog no site
+                        path('posts/') # o posts é usado como exemplo dentro de blog
+                    ]
+                
+                5 criando uma funcao dentro de blog.views para ser referenciada pelo passo  acima:
+                    def index(request):
+                
+                6 incorporando o arquivo html na funcao anterior:
+                    def .....:
+                        return render(request, 'blog/index.html')  # aqui dentro '' é necessário mostrar o caminho do html
+    
+    3 criando um template universal , um arquivo base html
+        
+         1 no setings do projeto, procure por 
+                TEMPLATES = [
+                    DIRS : [ os.path.join(BASE_DIR, 'paginas')] estou pedindo para o DIRS achar arquivos html no BASE_DIR (raiz do projeto) e concatenar com a pasta criada paginas a
+
+                ]
+        
+         2 crie a pasta paginas na base da pasta
+            Em paginas:
+                Estou criando um arquivo chamado base.html
+    
+    4 criando a pagina inicial:
+
+        Sempre que for criar um site, não esqueça de setar o DEBUG = FALSE, caso contrário, segurança pode ser comprometida !
+
+        1 primeira forma de criar a home :
+                (Não esqueça de verificar se TEMPLATE em SETINGS tem DIR)
+           1.1 na pasta do projeto, crie um arquivo chamado views.py
+                import o render pradrão
+                    from django.shortcuts import render
+
+               crie a funcao de chamada do index: 
+                    def index(request):
+                         return render(request,'home/index.html')
+                
+                Dentro da pasta paginas, crie pasta home e dentro dela crie index.html
+
+                Dentro da pasta do projeto principal, em URLS, referencie para a pagina inicial ser chamada:
+                    path('', views.index),
+        
+        2 Criando a home como se fosse um APP:
+
+            Crie um novo app
+                terminal : python manage.py startapp home
+
+            no url do projeto principal
+                from home import views    
+
+            Dentro de patterns no url
+                crie : path('', views.index),
+
+            no views de home crie uma funcao index
+                def index(request):
+                    return render(request, 'home/index.html')
+            
+            crie a pasta templates e home e index.html
+        
+    5 colocando arquivos estaticos (Js, bootstrap)
+
+        dentro da pasta principal, não a do projeto, crie uma pasta chamada templates ( o mesmo lugar onde se coloca base.html ...)
+
+        após, crie uma pasta chamada static dentro de templates
+
+        cole a pasta vendor aquela com ( bootstrap e js ) dentro do static
+
+        feito isso, nos htmls modifique os caminhos ....
+        lá na parte mais alta do html {%load static%}
+
+        mostre pro django onde procurar em setings, no final na parte de  STATIC_URL, depois dela:
+
+            STATICFILES_DIRS = [
+                os.path.join(BASE_DIR,'templates/static/')
+            ]
+    
+    6 Como criar arquivos parciais
+     
+     Na raiz do projeto, dentro de templates crie a pasta parciais
+     
+     depois crie a pasta _head.html(<---exemplo), nao esqueca do _underline
+
+     No lugar onde era pra ficar ocódigo original, digite {% include 'parciais/_head.html' %}
+
+     Agora você pode copiar varias vezes os mesmo códigos em html
+
+                    
+
+
+
+
+
+
+
+    

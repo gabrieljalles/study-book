@@ -1,0 +1,14 @@
+"""
+A criação de pacote deixa o código mais organizado.
+
+para importar:
+from pacote import nome_arquivo
+import pacote para importar todos os arquivos da pasta pacote
+
+
+
+caso queira pedir uma funcao de outro pacote :
+pacote.nome_arquivo.funcao()
+
+pacote é como uma pasta, mas ele já possui o arquivo init
+"""

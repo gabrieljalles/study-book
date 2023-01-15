@@ -1,0 +1,37 @@
+.flex-container{
+    display:flex;
+    height: 150px;
+    max-width:300px;
+    border: 2px solid black;
+}
+
+.item{
+    font-size:24px; 
+    height: 50%;
+    text-align: center;
+    width: 100px;
+    line-height: 75px;
+}
+
+.wrap{
+    flex-wrap:wrap;
+}
+.nowrap{
+    flex-wrap:nowrap;
+}
+
+.wrapreverse{
+    flex-wrap:wrap-reverse;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.orange{
+    background-color:orange;
+}
+
+.green{
+    background-color: green;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor BI</title>
+    <link rel="stylesheet" type="text/css" href="../base/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/6aaa0595b6.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <container class="interface-container">
+            <div class="img-box"></div>
+            <div class="data-area">
+                <form class="formulario" id="formulario" method="post">
+                    <div class="registro">
+                        <div class="campos-dados nome-usuario">
+                            <label for="nome-usuario">Nome completo</label>
+                            <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Nome completo" onlyLetters>
+                        </div>
+                        <div class="campos-dados matricula">
+                            <label for="matricula">Matrícula</label>
+                            <input type="number" id="matricula" name="matricula" placeholder="000000" hRequired minLength="6" maxLength="6">
+                        </div>
+
+                        <div class="campos-dados email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@seuemail.com"  emailValidate>
+                        </div>
+                        <div class="campos-dados password">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" name="password" placeholder="****" maxLength="16" passwordValidate hRequired>
+                            <ul>
+                                <li id="requirements-length">*Tamanho mínimo de 4 e máximo 16 caracteres;</li>
+                                <li id="requirements-numbers" >*Incluir números;</li>
+                                <li id="requirements-letters-ma">*Incluir letra maiúscula;</li>
+                                <li id="requirements-letters-mi">*Incluir letra minúscula;</li>
+                            </UL>
+                        </div>
+
+                        <div class="campos-dados rpassword">
+                            <label for="rpassword">Confirmar senha</label>
+                            <input type="password" id="rpassword" name="rpassword" placeholder="****" equal="password"  maxLength="16">
+                        </div>
+
+                        <div class="campos-dados nivel">
+                            <label for="nivel">Nível</label>
+                            <select name="select">
+                                <option value="colaborador">Coolaborador</option>
+                                <option value="coordenador">Coordenador</option>
+                                <option value="gerente">Gerente</option>
+                                <option value="diretor">Diretor</option>
+                                <option value="ti">Ti</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <button class="register" id="register">Cadastrar</button>
+                </form>
+                <div>
+                    <p class="error-validation template"></p>
+                </div>
+            </div>
+        </container>
+</body>
+</html>

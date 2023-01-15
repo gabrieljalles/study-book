@@ -1,0 +1,104 @@
+header{
+background: url("imagens/fundo-cabecalho-25.png");
+background-size:cover;
+}
+
+
+nav{
+    box-shadow: 0px 5px 5px grey;
+
+}
+.logocentral{
+    display: flex;
+    justify-content:center;
+}
+
+.hover-size:hover{
+    width:50px;
+    height:50px;
+}
+
+
+.size-icon{
+    width:40px;
+    height:40px;
+}
+.size-icon-1{
+    width:39px;
+    height:39px;
+}
+.size-icon-2{
+    width:43px;
+    height:43px;
+}
+.texto-ip-server{
+font-family:"oswald";
+text-shadow: 2px 2px 2px black;
+}
+
+.borda-ranking-index{
+    display:inline-table;
+    
+
+}
+
+.discord-widget{
+    width:100%;
+    box-shadow: 10px 10px 5px grey;
+
+}
+
+
+.carrossel-position{
+    max-width:1280px;
+    max-height:680px;
+    box-shadow: 10px 10px 5px grey;
+
+
+}
+
+.imagem-carrossel{
+    max-width:1280px;
+    max-height:600px;
+}
+
+
+.vantagens-vip{
+    max-width:1280px;
+    display:flex;
+    flex-direction:row;
+    border:solid 1px rgb(73, 73, 73);
+    border-radius:10px;
+    background: url("imagens/backgroundvantagens.png");
+    background-size:100%
+    
+}
+
+
+
+.gif-vantagens{
+    margin:10px;
+    border-radius:5px;
+}
+.card-shadow{
+    box-shadow: 7px 7px 5px grey;
+
+
+}
+
+
+.color-text{
+    color:white;
+    text-shadow: 1px 1px 8px #000000;
+}
+
+
+
+.logorodape{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background: url("imagens/rodapedefinitivo.png");
+}
+
+ 
